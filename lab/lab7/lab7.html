@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="" name="myform">
+    <table>
+        <tr>
+            <td>ten</td>
+            <td>
+                <input type="text" name="" id="ht">
+                <span class="thongbao"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>sdt</td>
+            <td>
+                <input type="number" name="" id="sdt">
+                <span class="thongbao"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>email</td>
+            <td>
+                <input type="email" name="" id="email">
+                <span class="thongbao"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>khoa hoc</td>
+            <td>
+                <select name="" id="khoahoc" onchange="chonloai()">
+                    <option value="">vui long chin khoa hoc</option>
+                    <option value="1">js</option>
+                    <option value="2">php</option>
+                    <option value="3">entt</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>hoc phi</td>
+            <td>
+                <input type="number" id="hocphi">
+            </td>
+        </tr>
+        <tr>
+            <td>pass</td>
+            <td>
+                <input type="password" name="" id="pass">
+                <span class="thongbao"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>repass</td>
+            <td>
+                <input type="password" name="" id="repass">
+                <span class="thongbao"></span>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2"> 
+                <button type="submit" onclick="return dangki()"> submit</button>
+            </td>
+        </tr>
+    </table>
+  </form>
+  
+  <script>
+    function chonloai(){
+        let loai = document.getElementById('khoahoc');
+        let gia = document.getElementById('hocphi');
+        if(loai.value == 1){
+            gia.value = 2000;
+        } else if (loai.value == 2){
+            gia.value = 5000;
+        } else if (loai.value == 3){
+            gia.value = 1000;
+        } else {
+            gia.value = '';
+        }
+    }
+  
+    function dangki(){
+        let check = true;
+        let name = document.getElementById('ht').value;
+        let sdt = document.getElementById('sdt').value;
+        let email = document.getElementById('email').value;
+        let pass = document.getElementById('pass').value;
+        let repass = document.getElementById('repass').value;
+  
+        let thongbao = document.getElementsByClassName('thongbao');
+  
+        if(name === ''){
+            check = false;
+            thongbao[0].innerHTML = 'vui long nhap ten';
+        } else {
+            check = true;
+            thongbao[0].innerHTML = '';
+        }
+  
+        if(sdt === ''){
+            check = false;
+            thongbao[1].innerHTML = 'vui long nhap sdt';
+        } else if(sdt.length !== 10){
+            check = false;
+            thongbao[1].innerHTML = 'sdt phai co 10 so';
+        } else {
+            check = true;
+            thongbao[1].innerHTML = '';
+        }
+  
+        if(email === ''){
+            check = false;
+            thongbao[2].innerHTML = 'vui long nhap email';
+        } else {
+            check = true;
+            thongbao[2].innerHTML = '';
+        }
+  
+        if(pass === ''){
+            check = false;
+            thongbao[3].innerHTML = 'vui long nhap pass';
+        } else {
+            check = true;
+            thongbao[3].innerHTML = '';
+        }
+  
+        if(repass === ''){
+            check = false;
+            thongbao[4].innerHTML = 'vui long nhap repass';
+        } else if(repass !== pass){
+            check = false;
+            thongbao[4].innerHTML = 'pass khong khop';
+        } else {
+            check = true;
+            thongbao[4].innerHTML = '';
+        }
+  
+        return check;
+    }
+  </script>
+  
+</body>
+</html>

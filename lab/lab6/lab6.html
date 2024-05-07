@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        padding: 20px;
+        border: 1px solid;
+        width: 500px;
+        margin: auto;
+      }
+     
+        *{  
+           
+            margin: 0 auto;
+            padding: 0;
+            width: 100%;
+        }
+        .app{
+            width: 100%;
+            margin: 0 auto;
+
+        }
+        .banner{
+            width: 70%;
+            margin: 0 auto;
+           
+        }
+
+        .nut{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -35px;
+    
+}
+.nut button{
+    
+    width: 60px;
+    height: 30px;
+    border: 1px solid gray;
+    background-color: rgb(176, 240, 240);
+    border-radius: 5px;
+}   
+   .form{
+    border: 1px solid black;
+    padding: 30px ;
+    width: 300px;
+    margin-top: 30px;
+   }    
+   input{
+    width: 180px;
+   }
+   .submit{
+    width: 70px;
+    height: 30px;
+   } 
+
+      *{  
+         
+          margin: 0 auto;
+          padding: 0;
+          width: 100%;
+      }
+      .app{
+          width: 100%;
+          margin: 0 auto;
+
+      }
+      .banner{
+          width: 70%;
+          margin: 0 auto;
+         
+      }
+
+      .nut{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: -35px;
+  
+}
+.nut button{
+  
+  width: 60px;
+  height: 30px;
+  border: 1px solid gray;
+  background-color: rgb(176, 240, 240);
+  border-radius: 5px;
+}   
+ .form{
+  border: 1px solid black;
+  padding: 30px ;
+  width: 300px;
+  margin-top: 30px;
+ }    
+ input{
+  width: 180px;
+ }
+ .submit{
+  width: 70px;
+  height: 30px;
+ }
+  
+   
+    </style>
+  </head>
+  <body>
+    
+</head>
+<body>
+
+  <div class="app">
+      <div class="banner">
+          <img src="/image/0.jpg" alt="" id="anh">
+      </div>
+      <div class="nut">
+          <button onclick="prev()">Previous</button>
+          <button onclick="next()">Next</button>
+      </div>
+
+    
+  </div>
+  <div class="container">
+    <h2>ĐĂNG KÍ THÀNH VIÊN</h2>
+    <form action="#" onsubmit="return check()">
+      <table>
+        <tr>
+          <td>Họ tên:</td>
+          <td><input type="text" name="ten" id="ten" /></td>
+          <td><span id="tenh"></span></td>
+        </tr>
+        <tr>
+          <td>Email:</td>
+          <td><input type="text" name="email" id="email" /></td>
+          <td><span id="emailh"></span></td>
+        </tr>
+        <tr>
+          <td>Số điện thoại:</td>
+          <td><input type="number" name="sdt" id="sdt" /></td>
+          <td><span id="sdth"></span></td>
+        </tr>
+        <tr>
+          <td>User:</td>
+          <td><input type="text" name="user" id="user" /></td>
+          <td><span id="userh"></span></td>
+        </tr>
+        <tr>
+          <td>Pass:</td>
+          <td><input type="password" name="pass" id="pass" /></td>
+          <td><span id="passh"></span></td>
+        </tr>
+        <tr>
+          <td>Repass:</td>
+          <td><input type="password" name="repass" id="repass" /></td>
+          <td><span id="repassh"></span></td>
+        </tr>
+        <tr>
+          <td>Ban biết chúng tôi:</td>
+          <td>
+            <input type="radio" name="know" id="b" value="" />Bạn giới thiệu
+            <input type="radio" name="know" id="q" value="" />Qua FB
+          </td>
+        </tr>
+      </table>
+      <br />
+      <input type="submit" value="Submit" />
+    </form>
+  </div>
+
+  <script>
+      setInterval(next,500)
+    var img=[];
+      for(let i = 0; i < 6; i++){
+          img[i] = new Image();
+          img[i].src = "image/" + i + ".jpg"
+
+      }
+    
+     
+
+      var index = 0;
+      function prev(){
+          index--;
+          if(index<0){
+              index=img.length-1;
+
+          }
+          document.getElementById('anh').src = img[index].src;
+      }
+
+      function next(){
+          index++;
+          if(index== img.length){
+              index = 0;
+          }
+          document.getElementById('anh').src = img[index].src;
+      }
+
+    
+   
+      function check() {
+        var ktra = false;
+        var a = document.getElementById("ten").value;
+        var b = document.getElementById("email").value;
+        var c = document.getElementById("sdt").value;
+        var d = document.getElementById("user").value;
+        var e = document.getElementById("pass").value;
+        var f = document.getElementById("repass").value;
+
+        //check họ tên
+        if (a.length < 1) {
+          document.getElementById("tenh").innerHTML = "Yêu cầu nhập họ và tên";
+          ktra = false;
+        } else {
+          document.getElementById("tenh").innerHTML = "ok";
+          ktra = true;
+        }
+
+        //check mail
+        var remail = new RegExp("\\w+@\\w+(\\.\\w+){1,2}", "g");
+        if (b.length < 1) {
+          document.getElementById("emailh").innerHTML = "Yêu cầu nhập email";
+          ktra = false;
+        } else if (!b.match(remail)) {
+          document.getElementById("emailh").innerHTML =
+            "Yêu cầu nhập đúng định dạng email";
+          ktra = false;
+        } else {
+            document.getElementById("emailh").innerHTML = "ok";
+          ktra = true;
+        }
+        if (c.length < 1) {
+          document.getElementById("sdth").innerHTML =
+            "Yêu cầu nhập số điện thoại";
+          ktra = false;
+        } else {
+            document.getElementById("sdth").innerHTML ='ok';
+          ktra = true;
+        }
+        if (d.length < 1) {
+          document.getElementById("userh").innerHTML = "Yêu cầu nhập user";
+          ktra = false;
+        } else if (d.length < 8) {
+          document.getElementById("userh").innerHTML =
+            "Yêu cầu user phải ít nhất 8 kí tự";
+          ktra = false;
+        } else {
+          document.getElementById("userh").innerHTML = "ok";
+          ktra = true;
+        }
+        if (e.length < 1) {
+          document.getElementById("passh").innerHTML = "Yêu cầu nhập password";
+          ktra = false;
+        } else {
+          document.getElementById("passh").innerHTML = "ok";
+          ktra = true;
+        }
+        if (f.length < 1) {
+          document.getElementById("repassh").innerHTML =
+            "Yêu cầu nhập repassword";
+          ktra = false;
+        } else if (f != e) {
+          document.getElementById("repassh").innerHTML =
+            "Yêu cầu repass phải trùng pass";
+          ktra = false;
+        } else {
+          document.getElementById("repassh").innerHTML = "ok";
+          ktra = true;
+        }
+        return ktra;
+      }
+      event.preventDefault();
+    </script>
+  </body>
+</html>

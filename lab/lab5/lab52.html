@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang đặt hàng</title>
+    <style>
+        body{
+            margin-left: 45%;
+        }
+        
+    </style>
+</head>
+
+<body onload="init()">
+    <h2>Danh mục hàng hóa</h2>
+    <table id="products" border="1">
+        <tr>
+            <td>iPhone9</td>
+            <td>2700$</td>
+            <td><button onclick="them(this)">Thêm</button></td>
+        </tr>
+        <tr>
+            <td>Samsung Galaxy S21</td>
+            <td>1500$</td>
+            <td><button onclick="them(this)">Thêm</button></td>
+        </tr>
+        <tr>
+            <td>Nokia 2020</td>
+            <td>1200$</td>
+            <td><button onclick="them(this)">Thêm</button></td>
+        </tr>
+        <tr>
+            <td>Sony Xperia</td>
+            <td>1700$</td>
+            <td><button onclick="them(this)">Thêm</button></td>
+        </tr>
+    </table>
+
+    <h2>Giỏ hàng</h2>
+    <table id="cart" border="1"></table>
+
+    <h2>Tổng tiền</h2>
+    <span id="tong">0$</span>
+
+    <script >
+        // Khởi tạo trạng thái ban đầu
+            function init() {
+                document.getElementById("tong").innerText = "0$";
+                // document.getElementById("cart").innerText = "Giỏ hàng rỗng";
+            }
+
+            // Hàm thêm mặt hàng vào giỏ hàng
+            function them(button) {
+                var row = button.parentElement.parentElement.cloneNode(true);
+                var btnXoa = row.getElementsByTagName("button")[0];
+                btnXoa.innerText = "Xoá";
+                btnXoa.setAttribute('onclick', 'xoa(this)');
+                document.getElementById("cart").appendChild(row);
+                tinhTong();
+            }
+
+            // Hàm xóa mặt hàng khỏi giỏ hàng
+            function xoa(button) {
+                var row = button.parentElement.parentElement;
+                document.getElementById("cart").removeChild(row);
+                tinhTong();
+            }
+
+            // Hàm tính tổng tiền của giỏ hàng
+            function tinhTong() {
+                var cart = document.getElementById("cart");
+                var rows = cart.getElementsByTagName("tr");
+                var tong = 0;
+                for (var i = 0; i < rows.length; i++) {
+                    var cells = rows[i].getElementsByTagName("td");
+                    var price = cells[1].innerText.substr(0); // Bỏ dấu $
+                    tong += parseFloat(price);
+                }
+                document.getElementById("tong").innerText = tong + "$";
+            }
+    </script>
+</body>
+
+</html>

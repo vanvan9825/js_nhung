@@ -1,0 +1,61 @@
+.form{
+    width: 300px;
+    margin: 5px auto;
+    padding:0;
+    border: 2px solid black;
+    border-radius: 1%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1{
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.khung{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 26px;
+    margin: 0px;
+}
+
+.lable{
+    font-size: 12px;
+    color: black;
+}
+.input{
+    width: 160px;
+    font-size: 16px;
+    border: 1px solid black;
+}
+#random{
+    background-color:#558ed5 ;
+}
+#ketqua{
+    background-color: #e46c0a;
+}
+.sinhso{
+    text-align: center;
+    line-height: 21px;
+    margin: 0 auto;
+    border: 2px solid #558ed5;
+    border-radius: 5px;
+    font-size: 11px;
+    font-weight:600;
+    background-color: white;
+    margin-bottom: 14px;
+}
+.div_botton{
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 14px;
+}
+.botton{
+    background-color: #e46c0a;
+    border: 1px solid #e46c0a ;
+    border-radius: 5px;
+    color: white;
+    width: 25px;
+    font-size: 11px;
+    line-height: 21px;
+    box-shadow:  1px 1px 5px gray;
+}

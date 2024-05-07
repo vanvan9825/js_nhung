@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <h2>Đăng KÍ KHÓA HỌC ONLINE</h2>
+    <form  class="form" action="" onsubmit="return kiemtra()">
+        <table>
+        <tr>
+            <td for="">Họ tên</td>
+             <td><input type="text" name="ht" id="ht"> 
+            <span id="errht"></span>
+            </td>
+        </tr>
+       <tr>
+         <td for="">Email</td>
+         <td> <input type="text" name="email" id="email">
+         <span id="erremail"></span>
+         </td>
+       </tr>
+        <tr>
+        <td for="">Số Điện Thoại</td>
+        <td>
+            <input type="text" name="sdt" id="sdt">
+             <span id="errsdt"></span>
+        </td>
+        </tr>
+        <tr>
+        <td for="">Khoá học</td>
+         <td>
+            <select name="" id="khoahoc">
+                <option  value="1">Khóa học HTML</option>
+                <option value="2">khóa JS</option>
+                <option value="3" >Khóa PHP</option>
+               </select>
+         </td>
+        </tr>
+       <tr>
+        <td for="">học phí</td>
+        <td>
+            <input type="text" name="hocphi" id="hocphi">
+         
+        </td>
+       </tr>
+      <tr>
+        <td for="">Hình thức học</td>
+        <td>
+        <input type="radio" id="truong"> Tại trường
+        <input type="radio" id="onl"> học onl
+        </td>
+      </tr>
+        </table>
+        <button type="submit">Đăng Ký</button>
+
+    </form>
+
+    <script  src="thithu.js" ></script>
+
+  
+</body>
+</html>

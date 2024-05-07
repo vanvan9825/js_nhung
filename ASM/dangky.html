@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Đăng Ký Thành Viên</h1>
+        <form action="post">
+            <div>
+                <label for="" tabindex="1">Mã sinh viên</label><br>
+                <input type="text" name="ma sinh vien"><br>
+                <label for="" tabindex="1">Họ Và Tên</label><br>
+                <input type="text" name="ho va ten"><br>
+                <label for="" tabindex="1">Email</label><br>
+                <input type="text" name="email"><br>
+                <p>Giới Tính</p>
+                <fieldset>
+                 <label for=""><input type="radio" name="gioitinh">Nam</label> 
+                 <label for=""><input type="radio" name="gioitinh">Nữ</label>
+                </fieldset><br>
+        
+                <p>Sở Thích:</p>
+                <fieldset>
+                  <label for=""><input type="checkbox" name="hobby" value="1">Đọc Sách</label>
+                <label for=""><input type="checkbox" name="hobby" value="2">Du Lịch</label>
+                <label for=""><input type="checkbox" name="hobby" value="3">Âm Nhạc</label>
+                <label for=""><input type="checkbox" name="hobby" value="4">Ẩm Thực</label>
+                <label for=""><input type="checkbox" name="hobby" value="4">Khác</label><br>
+                </fieldset>
+                
+        <br>
+                <div>
+                <label for="" tabindex="2">Quốc Tịch</label><br>
+                <select name="" id="" >
+                    <option value="">Việt Nam</option>
+                    <option value="">United State</option>
+                    <option value="">United Kingdom</option>
+                </select> <br>
+                </div>
+                
+                <p>Ghi Chú :</p>
+                <textarea name="" id="" cols="30" rows="3"></textarea><br>
+                <button>Đăng Ký</button>
+            </div>
+   
+    </div>
+      
+</body>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    width: 50%;
+    margin: 50px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  h1 {
+    text-align: center;
+    color: black;
+    text-transform: uppercase;
+
+  }
+  p{
+    color: black ;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  label {
+    margin-bottom: 10px;
+    color: black;
+  }
+
+  textarea {
+    padding: 10px ;
+    margin-bottom: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 83%;
+    height: 28px;
+
+  }
+  fieldset{
+    width: 80%;
+  }
+  button{
+    width: 70px;
+    height: 30px;
+    border-radius: 1px solid gray;
+  }
+  button:hover{
+    color: black;
+  }
+  div > input{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 85%;
+    height: 28px;
+  }
+  div > select{
+    width: 85%;
+    height: 35px;
+  }
+  
+ 
+
+
+</style>
+</html>
